@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upload</title>
+</head>
+<body>
+<h1>Questionário</h1>
+        A)
+        <p>
+            upload_max_filesize=40M<br>
+            file_uploads=On<br>
+            upload_tmp_dir="C:\xampp\tmp"<br>
+            post_max_size=40M<br>
+            max_input_time=60s <br>
+        </p>
+        b)
+        <p>
+         is_uploaded_file() serve para verificar se o o arquivo foi carregado via http post.
+        </p>
+        <p>
+        move_uploaded_file() move um arquivo enviado para um novo local.
+        </p>
+        c)
+        <p>
+        &lt;input type="hidden"&gt; é um campo oculto, os desenvolvedores web usam 
+        pra adicionar dados que não podem ser vistos ou modificados pelos usuários 
+        quando um formulário é enviado.
+        </p>
+        d)
+        <p>
+            A diversas formas de se filtrar o tipo de arquivo dentro do php,o que eu mais vi o pessoal
+            usando era por meio de um array. <br>
+            Exemplo. <br>
+            $tipos_permitidos =['jpg','jpeg','png','bmp','pdf'];
+        </p>
+
+        <hr>
+        <h2>Upload dos arquivos.</h2>
+
+        <form action="arquivo.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
+            <input type="file" name="arquivo_img" id="id_arquivo_img"><br><br>
+            <input type="file" name="arquivo_pdf" id="id_arquivo_pdf" ><br><br>
+            <input type="submit" name="acao" value="Enviar">
+
+
+
+        </form>
+</body>
+</html>
