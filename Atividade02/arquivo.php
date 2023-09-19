@@ -1,11 +1,12 @@
 <?php 
 
 if(isset($_POST['acao'])){
-    $tipos_permitidos =['jpg','jpeg','png','bmp','pdf'];
+    $tipos_permitidos_img =['jpg','jpeg','png','bmp','pdf'];
+    $tipos_permitidos_pdf =['pdf'];
     $extensao_img = pathinfo($_FILES['arquivo_img']['name'], PATHINFO_EXTENSION);
     $extensao_pdf = pathinfo($_FILES['arquivo_pdf']['name'], PATHINFO_EXTENSION);
     //array img.
-    if(in_array($extensao_img,$tipos_permitidos)){
+    if(in_array($extensao_img,$tipos_permitidos_img)){
         $pasta = "conteudo/";
         $temporario_img = $_FILES['arquivo_img']['tmp_name'];
         
@@ -28,7 +29,7 @@ if(isset($_POST['acao'])){
     }//fim do array img.
     
      //inicio do array pdf.
-    if(in_array($extensao_pdf, $tipos_permitidos)){
+    if(in_array($extensao_pdf, $tipos_permitidos_pdf)){
         $temporario_pdf = $_FILES['arquivo_pdf']['tmp_name'];
         $pasta = "conteudo/";   
         
@@ -48,4 +49,3 @@ if(isset($_POST['acao'])){
 
 
 ?>
-<a href="./conteudo/"></a>
